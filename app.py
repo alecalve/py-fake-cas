@@ -1,6 +1,6 @@
 from flask import Flask, session, request, render_template, redirect, Response
 import uuid
-from urllib.parse import urlparse, parse_qs, urlunparse, urlencode
+from urllib.parse import urlparse, parse_qs, urlencode
 from os import urandom
 
 
@@ -24,8 +24,8 @@ def login():
         return render_template('login.html', **locals())
     else:
         return generate_ticket(service)
-       
- 
+
+
 @app.route('/auth')
 def auth():
     service = request.args.get('service')
@@ -42,7 +42,7 @@ def validate():
 
 @app.route('/logout')
 def logout():
-    del session['logged']
+    del session['username']
     return redirect(request.args.get('url'))
 
 
