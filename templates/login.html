@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>py-fake-cas</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <form method="get" action="/auth">
+      <p>Username</p>
+      <input name="username" type="text">
+      <input style="display:none;" name="service" type="text" value="{{ service }}">
+      <button type="submit">Valider</button>  
+    </form>
+  </body>
+</html>
